@@ -1,0 +1,32 @@
+{
+  "name": "markdown-page",
+  "version": "0.0.1",
+  "description": "",
+  "homepage": [
+    ""
+  ],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [],
+  "author": "JP Richardson <jprichardson@gmail.com>",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": ""
+    }
+  ],
+  "dependencies": {
+    "marked": "~0.2.5",
+    "markdown-extra": "0.0.2",
+    "string": "~1.1.0"
+  },
+  "devDependencies": {
+    "testutil": "~0.2.4"
+  },
+  "main": "./lib/markdown-page.js",
+  "scripts": {
+    "test": "mocha test"
+  }
+}
