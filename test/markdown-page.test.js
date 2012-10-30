@@ -97,6 +97,33 @@ describe('MarkdownPage', function() {
       T (MDP.metadata.publish)
       T (MDP.metadata.anything)
     })
+
+    describe('- metadata.tags', function() {
+      describe ('> when delimitted by spaces', function() {
+        it ('should parse the tags', function(done) {
+          var newData = data.replace("tags: programming, node.js", "tags: programming node.js")
+            , mdp = MarkdownPage.create(newData)
+
+          mdp.parse(function(err) {
+            F (err)
+            T (MDP.metadata.tags.length === 2)
+            done()
+          })
+        })
+      })
+
+      describe ('> when delimitted by commas', function() {
+        it ('should parse the tags', function() {
+          T (MDP.metadata.tags.length === 2)
+        })
+      })
+    })
+
+    describe('- metadata.publish', function() {
+      it ('should parse any JavaScript parsable date', function() {
+        T (MDP.metadata.publish.getDate() === (new Date(Date.parse('2012-03-04'))).getDate())
+      })
+    })
   })
 
   describe('- slug([textString])', function() {
