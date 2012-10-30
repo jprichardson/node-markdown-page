@@ -7,9 +7,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git@github.com:jprichardson/node-markdown-page.git"
   },
-  "keywords": [],
+  "keywords": ["markdown", "potter", "blog", "documentation", "docs"],
   "author": "JP Richardson <jprichardson@gmail.com>",
   "licenses": [
     {
