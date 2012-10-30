@@ -121,7 +121,7 @@ describe('MarkdownPage', function() {
 
     describe('- metadata.publish', function() {
       it ('should parse any JavaScript parsable date', function() {
-        T (MDP.metadata.publish.getDate() === (new Date(Date.parse('2012-03-04'))).getDate())
+        T (MDP.metadata.publish.getTime() === (new Date(Date.parse('2012-03-04'))).getTime())
       })
     })
   })
