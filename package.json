@@ -1,6 +1,6 @@
 {
   "name": "markdown-page",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "homepage": [
     ""
@@ -9,7 +9,13 @@
     "type": "git",
     "url": "git@github.com:jprichardson/node-markdown-page.git"
   },
-  "keywords": ["markdown", "potter", "blog", "documentation", "docs"],
+  "keywords": [
+    "markdown",
+    "potter",
+    "blog",
+    "documentation",
+    "docs"
+  ],
   "author": "JP Richardson <jprichardson@gmail.com>",
   "licenses": [
     {
@@ -20,7 +26,8 @@
   "dependencies": {
     "marked": "~0.2.5",
     "markdown-extra": "0.0.2",
-    "string": "~1.1.0"
+    "string": "~1.1.0",
+    "highlight": "~0.2.3"
   },
   "devDependencies": {
     "testutil": "~0.2.4"
