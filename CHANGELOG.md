@@ -1,3 +1,7 @@
+0.0.5 / 2012-11-08
+------------------
+* Bug fix on `publish` metadataConversion method.
+
 0.0.4 / 2012-11-08
 ------------------
 * Added methods `readFile()` and `writeFile()`. Shouldn't be used on the same object.
