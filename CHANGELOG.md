@@ -1,3 +1,9 @@
+0.0.4 / 2012-11-08
+------------------
+* Added methods `readFile()` and `writeFile()`. Shouldn't be used on the same object.
+* Add field `metadataConversions`. 
+* Fixed behavior of `slug()`. See: https://github.com/jprichardson/string.js/issues/17
+
 0.0.3 / 2012-11-04
 ------------------
 * Bug fix: added `highlight` dependency.
