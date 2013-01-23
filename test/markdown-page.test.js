@@ -44,7 +44,7 @@ describe('MarkdownPage', function() {
       it ('should create a new MarkdownPage with markdown text', function() {
         var mdp = new MarkdownPage(data);
         T (mdp)
-        T (mdp.text === data)
+        EQ (mdp.text, data)
       })
     })
 
@@ -57,7 +57,7 @@ describe('MarkdownPage', function() {
       it ('should create a new MarkdownPage with markdown text', function() {
         var mdp = MarkdownPage.create(data);
         T (mdp)
-        T (mdp.text === data)
+        EQ (mdp.text, data)
       })
     })
 
@@ -86,13 +86,13 @@ describe('MarkdownPage', function() {
 
     describe('- text', function() {
       it ('should be the text passed into the constructor', function() {
-        T (MDP.text === data)
+        EQ (MDP.text, data)
       })
     })
 
     describe('- title', function() {
       it('should retrieve the title', function() {
-        T (MDP.title === 'Node.js is a Fun Platform')
+        EQ (MDP.title, 'Node.js is a Fun Platform')
       })
     })
 
@@ -167,7 +167,7 @@ describe('MarkdownPage', function() {
       })
     })
 
-    describe(' - writeFile(file, callback)', function() {
+    describe('- writeFile(file, callback)', function() {
       it ('should write the file', function(done) {
         var file = path.join(TEST_DIR, 'something.md')
 
@@ -190,10 +190,25 @@ describe('MarkdownPage', function() {
 
           var data2 = fs.readFileSync(file, 'utf8')
 
-          T (data === data2)
+          EQ (data, data2)
 
           done()
           
+        })
+      })
+
+      describe('> when a markdown body is not present', function() {
+        it('should write the file with an empty body', function(done) {
+          var file = path.join(TEST_DIR, 'something.md')
+          var mdp = MarkdownPage.create()
+          mdp.title = 'Some Title'
+          mdp.writeFile(file, function(err) {
+            F (err)
+
+            var data = fs.readFileSync(file, 'utf8')
+            EQ (data.indexOf('null'), -1)
+            done()
+          })
         })
       })
     })
