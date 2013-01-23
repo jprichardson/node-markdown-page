@@ -1,7 +1,7 @@
 {
   "name": "markdown-page",
-  "version": "0.0.5",
-  "description": "",
+  "version": "0.1.0",
+  "description": "Parse a markdown article or page.",
   "homepage": [
     ""
   ],
@@ -25,12 +25,13 @@
   ],
   "dependencies": {
     "marked": "~0.2.5",
-    "markdown-extra": "0.0.2",
-    "string": "~1.1.0",
+    "markdown-extra": "~0.1.0",
+    "string": "~1.2.0",
     "highlight": "~0.2.3"
   },
   "devDependencies": {
-    "testutil": "~0.2.4"
+    "testutil": "~0.4.0",
+    "mocha": "*"
   },
   "main": "./lib/markdown-page.js",
   "scripts": {

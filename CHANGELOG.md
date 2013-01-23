@@ -1,3 +1,8 @@
+0.1.0 / 2013-01-23
+------------------
+* Fixed null body bug.
+* Updated deps.
+
 0.0.5 / 2012-11-08
 ------------------
 * Bug fix on `publish` metadataConversion method.
