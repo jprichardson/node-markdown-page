@@ -22,7 +22,7 @@ Installation
 Example
 ------
 
-A bit unstable. See tests. 
+Very unstable API. See tests. 
 
 
 
