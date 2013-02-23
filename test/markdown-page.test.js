@@ -212,6 +212,27 @@ describe('MarkdownPage', function() {
       })
     })
   })
+
+  describe('Metadata Conversions', function() {
+    describe('tags', function() {
+      it('should serialize from an array to a string', function() {
+        var serialize = (new MarkdownPage).metadataConversions.tags.serialize
+        EQ (serialize(['cars', 'planes']), 'cars, planes')
+        EQ (serialize(['cars']), 'cars')
+      })
+
+      it('should deserialize from a string to an array', function() {
+        var deserialize = (new MarkdownPage).metadataConversions.tags.deserialize
+        var a1 = ['cars', 'planes']
+        var a2 = ['cars']
+
+        EQ (deserialize('cars, planes')[0], a1[0])
+        EQ (deserialize('cars, planes')[1], a1[1])
+        EQ (deserialize('cars')[0], a2[0])
+        EQ (deserialize('cars')[0], a2[0])
+      })
+    })
+  })
 })
 
 

@@ -1,6 +1,6 @@
 {
   "name": "markdown-page",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Parse a markdown article or page.",
   "homepage": [
     ""

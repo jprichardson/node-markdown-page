@@ -1,3 +1,7 @@
+0.1.2 / 2013-02-16
+------------------
+* Fixed deserialize bug on one tag. Added tests.
+
 0.1.1 / 2013-01-31
 ------------------
 * add `genOutput()` method
