@@ -106,13 +106,15 @@ describe('MarkdownPage', function() {
 
     describe('- metadata.tags', function() {
       describe ('> when delimitted by spaces', function() {
-        it ('should parse the tags', function(done) {
+        it ('should treat as one tag (spaces as delimitters are not supported anymore)', function(done) {
           var newData = data.replace("tags: programming, node.js", "tags: programming node.js")
             , mdp = MarkdownPage.create(newData)
 
           mdp.parse(function(err) {
             F (err)
-            T (MDP.metadata.tags.length === 2)
+            EQ (mdp.metadata.tags.length, 1)
+            EQ (mdp.metadata.tags[0], "programming node.js")
+
             done()
           })
         })
@@ -207,6 +209,20 @@ describe('MarkdownPage', function() {
 
           var data = fs.readFileSync(file, 'utf8')
           EQ (data.indexOf('null'), -1)
+          done()
+        })
+      })
+    })
+
+    describe('> when a title is not present', function() {
+      it('should not put the title header', function(done) {
+        var file = path.join(TEST_DIR, 'something.md')
+        var mdp = MarkdownPage.create()
+        mdp.writeFile(file, function(err) {
+          F (err)
+
+          var data = fs.readFileSync(file, 'utf8')
+          F (data.indexOf('=') >= 0)
           done()
         })
       })

@@ -30,7 +30,7 @@
     "highlight": "~0.2.3"
   },
   "devDependencies": {
-    "testutil": "~0.4.0",
+    "testutil": "~0.5.1",
     "mocha": "*"
   },
   "main": "./lib/markdown-page.js",

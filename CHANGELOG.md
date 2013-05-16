@@ -1,3 +1,8 @@
+0.2.0 / 2013-05-16
+------------------
+* if `title` is not present, `writeFile()` will not error anymore
+* spaces as delimiters for tags is now forbidden
+
 0.1.2 / 2013-02-16
 ------------------
 * Fixed deserialize bug on one tag. Added tests.
