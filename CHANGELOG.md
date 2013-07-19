@@ -1,3 +1,7 @@
+0.2.1 / 2013-07-19
+------------------
+* fixed bug if metadata had a `:` in it
+
 0.2.0 / 2013-05-16
 ------------------
 * if `title` is not present, `writeFile()` will not error anymore
