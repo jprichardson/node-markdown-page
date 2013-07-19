@@ -132,6 +132,26 @@ describe('MarkdownPage', function() {
         T (MDP.metadata.publish.getTime() === (new Date(Date.parse('2012-03-04'))).getTime())
       })
     })
+
+    describe('when metadata contains a colon', function() {
+      it('should parse the first colon and leave the colon in the value', function(done) {
+        var data = [""
+             , "<!--"
+             , "author: JP Richardson"
+             , "publish: 2012-03-04"
+             , "tags: programming, node.js"
+             , "title: Coding Adventures: Part 1." //<--- notice ':' in article title?
+             , "-->"
+             , ""
+            ].join('\n');
+
+        var mdp = MarkdownPage.create(data)
+        mdp.parse(function() {
+          EQ (mdp.metadata.title, 'Coding Adventures: Part 1.')
+          done()
+        })
+      })
+    })
   })
 
   describe('- readFile(file, callback)', function() {
